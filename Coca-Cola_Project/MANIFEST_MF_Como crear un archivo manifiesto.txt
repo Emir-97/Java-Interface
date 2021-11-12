@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Created-By: Emir Zahir Zatta Miranda
+Main-Class: Welcome
+X-COMMENT: First Proyec of Java

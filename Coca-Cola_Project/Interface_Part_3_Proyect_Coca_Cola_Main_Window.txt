@@ -1,0 +1,238 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class Principal extends JFrame implements ActionListener{
+  private JMenuBar bar;
+  private JMenu  menuOptions, menuCalcular, menuAbaoutOf, menuBackground;
+  private JMenuItem myCalculator, myRed, myBlack, myPurple, myCreator,  myOut, myNew;
+  private JLabel labelLog, labelWelcome, labelTitle, labelName, labelPaternal, labelLMaternal,
+                 labelDeparment, labelAntiquity, labelResult, labelFooter;
+  private JTextField textName, textFLName, textMLName;
+  private JComboBox  comboDepartment,  comboAntiquity;
+  private JScrollPane  scrollpane1;
+  private JTextArea textarea1;
+
+  public Principal(){
+   setLayout(null);
+   setTitle("Main screen");
+   getContentPane().setBackground(new Color(255,0,0));
+   setIconImage(new ImageIcon(getClass().getResource("images/icon.png")).getImage());
+  
+   bar = new JMenuBar();
+   bar.setBackground(new Color(255,0,0));
+   setJMenuBar(bar);
+ 
+   menuOptions  =  new JMenu("Options");
+   menuOptions.setBackground(new Color(255,0,0));
+   menuOptions.setFont(new Font("Andale Mono", 1, 14));
+   menuOptions.setForeground(new Color(255,255,255));
+   bar.add(menuOptions);
+
+   menuCalcular = new JMenu("Calculator");
+   menuCalcular.setBackground(new Color(255,0,0));
+   menuCalcular.setFont(new Font("Andale Mono", 1, 14));
+   menuCalcular.setForeground(new Color(255,255,255));
+   bar.add(menuCalcular);
+
+   menuAbaoutOf = new JMenu("Abaout of");
+   menuAbaoutOf.setBackground(new Color(255,0,0));
+   menuAbaoutOf.setFont(new Font("Andale Mono", 1, 14));
+   menuAbaoutOf.setForeground(new Color(255,255,255));
+   bar.add(menuAbaoutOf);
+
+   menuBackground = new JMenu("Background color");
+   menuBackground.setFont(new Font("Andale Mono", 1, 14));
+   menuBackground.setForeground(new Color(255,0,0));
+   menuOptions.add(menuBackground);
+ 
+   myCalculator = new JMenuItem("Vacations");
+   myCalculator.setFont(new Font("Andale Mono", 1, 14));
+   myCalculator.setForeground(new Color(255,0,0));
+   menuCalcular.add(myCalculator);
+   myCalculator.addActionListener(this);
+
+   myRed = new JMenuItem("Red");
+   myRed.setFont(new Font("Andale Mono", 1, 14));
+   myRed.setForeground(new Color(255,0,0));
+   menuBackground.add(myRed);
+   myRed.addActionListener(this);
+
+   myBlack = new JMenuItem("Black");
+   myBlack.setFont(new Font("Andale Mono", 1, 14));
+   myBlack.setForeground(new Color(255,0,0));
+   menuBackground.add(myBlack);
+   myBlack.addActionListener(this);
+
+   myPurple = new JMenuItem("Purple");
+   myPurple.setFont(new Font("Andale Mono", 1, 14));
+   myPurple.setForeground(new Color(255,0,0));
+   menuBackground.add(myPurple);
+   myPurple.addActionListener(this);
+
+   myNew = new JMenuItem("New");
+   myNew.setFont(new Font("Andale Mono", 1, 14));
+   myNew.setForeground(new Color(255,0,0));
+   menuOptions.add(myNew);
+   myNew.addActionListener(this);
+
+   myCreator = new JMenuItem("The creator");
+   myCreator.setFont(new Font("Andale Mono", 1, 14));
+   myCreator.setForeground(new Color(255,0,0));
+   menuAbaoutOf.add(myCreator);
+   myCreator.addActionListener(this);
+
+   myOut = new JMenuItem("Out");
+   myOut.setFont(new Font("Andale Mono", 1, 14));
+   myOut.setForeground(new Color(255,0,0));
+   menuOptions.add(myOut);
+   myOut.addActionListener(this);
+
+   ImageIcon image = new ImageIcon("images/logo-coca.png");
+   labelLog = new JLabel(image);
+   labelLog.setBounds(5,5,250,100);
+   add(labelLog);
+
+   labelWelcome = new JLabel("Welcome");
+   labelWelcome.setBounds(280,30,300,50);
+   labelWelcome.setFont(new Font("Andale Mono", 1, 32));
+   labelWelcome.setForeground(new Color(255,255,255)); 
+   add(labelWelcome);
+
+   
+   labelTitle = new JLabel("Worker data for the calculation of vacations");
+   labelTitle.setBounds(45,140,900,25);
+   labelTitle.setFont(new Font("Andale Mono", 0, 24));
+   labelTitle.setForeground(new Color(255,255,255));
+   add(labelTitle);
+
+   labelName = new JLabel("Complete Name");
+   labelName.setBounds(25,188,180,25);
+   labelName.setFont(new Font("Andale Mono", 1, 12));
+   labelName.setForeground(new Color(255,255,255));
+   add(labelName);
+  
+   textName = new JTextField();
+   textName.setBounds(25,213,150,25);
+   textName.setBackground(new java.awt.Color(255,224,224));
+   textName.setFont(new java.awt.Font("Andale mono", 1, 14));
+   textName.setForeground(new java.awt.Color(255,0,0));
+   add(textName);    
+
+   labelPaternal = new JLabel("Paternal last name:");
+   labelPaternal.setBounds(25,248,180,25);
+   labelPaternal.setFont(new Font("Andale Mono", 1, 12));
+   labelPaternal.setForeground(new Color(255,255,255));
+   add(labelPaternal);
+   
+   textFLName = new JTextField();
+   textFLName.setBounds(25,273,150,25);
+   textFLName.setBackground(new java.awt.Color(224,224,224));
+   textFLName.setFont(new java.awt.Font("Andale Mono", 1, 14));
+   textFLName.setForeground(new java.awt.Color(255,0,0));
+   add(textFLName);
+   
+   labelLMaternal = new JLabel("Maternal last name:");
+   labelLMaternal.setBounds(25,308,180,25);
+   labelLMaternal.setFont(new Font("Andale Mono", 1, 12));
+   labelLMaternal.setForeground(new Color(255,255,255));
+   add(labelLMaternal);
+   
+   textMLName = new JTextField();
+   textMLName.setBounds(25,334,150,25);
+   textMLName.setBackground(new java.awt.Color(224,224,224));
+   textMLName.setFont(new java.awt.Font("Andale Mono", 1, 14));
+   textMLName.setForeground(new java.awt.Color(255,0,0));
+   add(textMLName);
+
+   labelDeparment  = new JLabel("Select department:");
+   labelDeparment.setBounds(220,188,180,25);
+   labelDeparment.setFont(new Font("Andale Mono", 1, 12));
+   labelDeparment.setForeground(new Color(255,255,255));
+   add(labelDeparment);
+
+   comboDepartment = new JComboBox();
+   comboDepartment.setBounds(220,213,220,25);
+   comboDepartment.setBackground(new java.awt.Color(224,224,224));
+   comboDepartment.setFont(new java.awt.Font("Andale Mono", 1, 14));
+   comboDepartment.setForeground(new java.awt.Color(255,0,0));
+   add(comboDepartment);
+   comboDepartment.addItem("");
+   comboDepartment.addItem("Customer Support");
+   comboDepartment.addItem("Logistic Department");
+   comboDepartment.addItem("Magnament Department");
+
+   labelAntiquity = new JLabel("Worker antiquity:");
+   labelAntiquity.setBounds(220,248,180,25);
+   labelAntiquity.setFont(new Font("Andale Mono", 1, 12));
+   labelAntiquity.setForeground(new Color(255,255,255));
+   add(labelAntiquity);
+
+   comboAntiquity = new JComboBox();
+   comboAntiquity.setBounds(220,273,220,25);
+   comboAntiquity.setBackground(new java.awt.Color(224,224,224));
+   comboAntiquity.setFont(new java.awt.Font("Andale Mono", 1, 14));
+   comboAntiquity.setForeground(new java.awt.Color(255,0,0));
+   add(comboAntiquity);
+   comboAntiquity.addItem("");
+   comboAntiquity.addItem("One year of service");
+   comboAntiquity.addItem("Two to six years of service");
+   comboAntiquity.addItem("Seven years or more of service");
+ 
+   labelResult = new JLabel("Calculation Result:");
+   labelResult.setBounds(220,307,180,25);
+   labelResult.setFont(new Font("Andale Mono", 1, 12));
+   labelResult.setForeground(new Color(255,255,255));
+   add(labelResult);
+
+   textarea1 = new JTextArea();
+   textarea1.setEditable(false);
+   textarea1.setBackground(new java.awt.Color(224,224,224));
+   textarea1.setFont(new java.awt.Font("Andale Mono", 1, 11));
+   textarea1.setForeground(new java.awt.Color(255,0,0));
+   textarea1.setText("\n   Here is the calculation result of the vacations.");
+   scrollpane1 = new JScrollPane(textarea1);
+   scrollpane1.setBounds(220,333,385,90);
+   add(scrollpane1);
+
+   labelFooter = new JLabel("©The Coca-Cola Company | All rigths reserved");
+   labelFooter.setBounds(135,445,500,30);
+   labelFooter.setFont(new java.awt.Font("Andale Mono", 1, 12));
+   labelFooter.setForeground(new java.awt.Color(255,255,255));
+   add(labelFooter);
+
+       
+ }
+
+  public void actionPerformed(ActionEvent e){
+   if(e.getSource() ==  myCalculator){
+
+  }
+   if(e.getSource() ==  myRed){
+
+  }
+   if(e.getSource() == myBlack){
+
+  }
+   if(e.getSource() == myPurple){
+
+  }
+   if(e.getSource() == myNew){
+
+  }
+   if(e.getSource() == myOut){
+
+  }
+   if(e.getSource() == myCreator){
+
+  }
+ }
+
+  public static void main(String args[]){
+   Principal prin1 = new Principal();
+   prin1.setBounds(0,0,640,535);
+   prin1.setVisible(true);
+   prin1.setResizable(false);
+   prin1.setLocationRelativeTo(null);
+ } 
+}
